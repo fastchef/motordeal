@@ -1,0 +1,874 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  padding-top: 80px;
+  background: #000000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#promo {
+  min-height: calc(100vh - 80px - 100px);
+  position: relative;
+  padding-bottom: 50px;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.capa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1c1c1d;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+}
+
+.promo-content {
+  padding-top: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  margin: auto;
+  width: 60%;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+main h1 {
+  font-size: 4rem;
+  margin-bottom: 0px;
+  text-align: center;
+  text-shadow: #1c1c1d 0px 0px 10px, #1c1c1d 0px 0px 20px, #1c1c1d 0px 0px 30px; 
+}
+
+main p {
+  font-size: 1.5rem;
+  margin-top: 5px;
+  padding-bottom: 40px;
+  text-align: center;
+  text-shadow: #6f6f6f 0px 0px 10px, #1c1c1d 0px 0px 20px, #1c1c1d 0px 0px 30px; 
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+        
+.navbar-logo img {
+    height: 45px;
+    width: auto;
+    transition: all 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+        
+.navbar-logo img:hover {
+    transform: translateY(-2px);
+}
+        
+.navbar-toggle {
+    display: none;
+}
+        
+.hamburger {
+    display: none;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1001;
+}
+        
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+        
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+        
+.hamburger span:nth-child(2),
+.hamburger span:nth-child(3) {
+    top: 10px;
+}
+        
+.hamburger span:nth-child(4) {
+    top: 20px;
+}
+        
+.navbar-toggle:checked ~ .hamburger span:nth-child(1),
+.navbar-toggle:checked ~ .hamburger span:nth-child(4) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+}
+        
+.navbar-toggle:checked ~ .hamburger span:nth-child(2) {
+    transform: rotate(45deg);
+    background: #ffd700;
+}
+        
+.navbar-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg);
+    background: #ffd700;
+}
+        
+.navbar-toggle:checked ~ .navbar-menu {
+    left: 0;
+}
+        
+.navbar-menu {
+            display: flex;
+            list-style: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+.navbar-menu li {
+            margin-left: 40px;
+        }
+        
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 8px 0;
+    position: relative;
+    text-transform: uppercase;
+}
+        
+.navbar-menu a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffd700;
+    transition: width 0.3s ease;
+}
+        
+.navbar-menu a:hover::before {
+    width: 100%;
+}
+        
+.navbar-menu a:hover {
+    color: #ffd700;
+}
+        
+@media (max-width: 992px) {
+    .hamburger {
+        display: block;
+    }
+            
+    .navbar-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: #000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        gap: 30px;
+    }
+            
+    .navbar-menu li {
+        margin: 0;
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: all 0.4s ease;
+    }
+            
+    .navbar-toggle:checked ~ .navbar-menu li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+            
+    .navbar-menu a {
+        font-size: 1.5rem;
+        padding: 10px 25px;
+    }
+            
+    .navbar-menu a::before {
+        height: 3px;
+        bottom: 5px;
+    }
+}
+
+.footer {
+    position: relative;
+    z-index: 2;
+    background: #000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.copyright {
+    font-size: 14px;
+}
+.contact-info {
+    font-size: 15px;
+}
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.contact-info a:hover {
+    color: #ffd700;
+}
+
+.contact-item a:hover {
+    color: #ffd700;
+}
+
+.about-section {
+    padding: 150px 20px;
+    position: relative;
+    z-index: 1;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.section-title {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #ffd700;
+    margin: 15px auto 0;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+}
+.text-content {
+    max-width: 800px;
+}
+.about-text {
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    #promo {
+      padding-bottom: 280px;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+}
+
+.objectives-section {
+    background-color: #000;
+    padding: 150px 20px;
+    position: relative;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.section-title {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.objective-title {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+.objective-title .highlight {
+    color: #ffd700;
+}
+.objective-title:after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 2px;
+    background: #ffd700;
+    margin-top: 8px;
+}
+.objective-text {
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    border-left: 3px solid #ffd700;
+}
+.specific-objectives {
+    margin-top: 50px;
+}
+.objectives-list {
+    list-style: none;
+    padding: 0;
+}
+.objective-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    background: rgba(255, 215, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    border-left: 3px solid #ffd700;
+}
+
+.number-circle {
+    background: #ffd700;
+    color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+.objective-item p {
+    color: #fff;
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .objective-title {
+        font-size: 1.5rem;
+    }
+    .objective-text,
+    .objective-item p {
+        font-size: 1rem;
+    }
+}
+
+.cta-section {
+    background: url('imagenes/bannercta.jpg') no-repeat center center/cover;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    align-items: center;
+    min-height: 100vh;
+    height: 100vh;
+}
+
+.cta-content {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cta-title {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+.highlight {
+    color: #ffd700;
+    position: relative;
+}
+
+.highlight:after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffd700;
+    z-index: -1;
+}
+
+.cta-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ffd700;
+    color: #000;
+    padding: 15px 40px;
+    margin-top: 55px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.cta-button:hover {
+    background-color: #fff830;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .cta-title {
+        font-size: 2rem;
+    }
+    .cta-subtitle {
+        font-size: 1rem;
+    }
+}
+
+.cars-section {
+    background-color: #000;
+    padding: 60px 20px;
+    padding-bottom: 200px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+}
+.card {
+    background-color: #1c1c1d;
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    width: auto;
+    width: auto;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.car-image {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: #ffd700;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.card-button:hover {
+    background-color: #ffee2f;
+}
+
+@media (max-width: 764px) {
+    .card {
+        padding: 10px;
+        margin: 0;
+        margin-bottom: auto;
+    }
+
+    .car-title {
+        font-size: 1.1rem;
+        line-height: 1.3;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .car-price {
+        font-size: 1rem;
+    }
+
+    .card-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+.review-section {
+    background-color: #000;
+    padding: 40px 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    color: #fff;
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+    background-color: #1c1c1d;
+    color: #fff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #ffd700;
+}
+
+.cta-button {
+    background-color: gold;
+    color: #000;
+    padding: 15px 40px;
+    margin: 60px auto 245px auto;
+    border: none;
+    border-radius: 30px;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffec5b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+.cta-button-wsp {
+    background-color: rgb(29, 176, 13);
+    color: #eeeeee;
+    padding: 12px 24px;
+    margin: 60px auto 245px auto;
+    border: none;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    width: fit-content;
+    gap: 10px;
+}
+
+.wsp-icon {
+    width: 27px;
+    height: 24px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+}
+
+.cta-button-wsp:hover {
+    background-color: #5ce133;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(9, 255, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .cta-button {
+        display: block;
+        margin: 50px auto 270px auto;
+        width: fit-content;
+        min-width: 180px;
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+.required {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+.car-section {
+    background-color: #000;
+    color: white;
+    padding: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+
+.car-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.car-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #D4AF37;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-top: 15px;
+    text-overflow: ellipsis; 
+}
+
+.car-price {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-transform: bold;
+    color: white;
+}
+
+.description-container {
+    border-top: 1px solid #D4AF37;
+    padding-top: 20px;
+}
+
+.description-title {
+    font-size: 1.5rem;
+    color: #D4AF37;
+    margin-bottom: 15px;
+}
+
+.description-text {
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .car-section {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: auto;
+  }
+
+  .car-details h1 {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .car-price {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .car-details p {
+    text-align: left;
+    margin: auto;
+  }
+
+  .carousel-section {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .carousel-container {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .cta-button {
+    width: 80% !important;
+    font-size: 1rem;
+  }
+}
+
+@media (aspect-ratio: 16/10) {
+  .promo-content {
+    padding-top: 320px;
+  }
+
+  main h1 {
+    font-size: 3.8rem;
+  }
+
+  main p {
+    font-size: 1.4rem;
+  }
+
+  .cta-title {
+    font-size: 2.3rem;
+  }
+
+  .objective-title {
+    font-size: 1.6rem;
+  }
+
+  .about-text,
+  .objective-text,
+  .objective-item p {
+    font-size: 1.05rem;
+  }
+
+  .card {
+    transform: scale(0.98);
+  }
+}
+
+.card-tuauto {
+    background-color: #1c1c1d;
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    width: 400px;
+    padding-bottom: 15px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 0 auto;
+}
+
+.card-tuauto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.card-tuauto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 2px solid #ffd700;
+}
+
+.card-tuauto .car-title {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.card-tuauto .card-button {
+    display: inline-block;
+    background-color: #ffd700;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-bottom: 15px;
+}
+
+.card-tuauto .card-button:hover {
+    background-color: #fff830;
+}
+
+@media (max-width: 480px) {
+    .card-tuauto {
+        width: 90%;
+    }
+}

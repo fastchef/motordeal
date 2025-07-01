@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="imagenes/motordeal.png" type="image/png">
+  <title>MotorDeal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="carousel.css">
+</head>
+<body>
+        <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+            <img src="imagenes/logo-horizontal.png" alt="Logo">
+        </a> 
+        <input type="checkbox" id="navbar-toggle" class="navbar-toggle">
+        <label for="navbar-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="navbar-menu">
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="reseñas.html">Reseñas</a></li>
+            <li><a href="#footer">Contáctanos</a></li>
+        </ul>
+        </nav>
+
+    <section class="car-section">
+        <section class="carousel-section">
+            <div class="carousel-container">
+            <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+
+            <div class="carousel-slides">
+                <img src="imagenes/autos/drive/ato4/pov4-2.png" alt="Auto 1" class="carousel-slide active"/>
+                <img src="imagenes/autos/drive/ato4/pov4-1.png" alt="Auto 2" class="carousel-slide"/>
+                <img src="imagenes/autos/drive/ato4/pov4-4.png" alt="Auto 3" class="carousel-slide"/>
+                <img src="imagenes/autos/drive/ato4/pov4-3.png" alt="Auto 4" class="carousel-slide"/>
+            </div>
+
+            <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
+            </div>
+        </section>
+        
+        <div class="car-details">
+            <h1 class="car-title">Volkswagen Saveiro Robust 2021 Doble Cabina</h1>
+            <p class="car-price">90.000.000 ₲</p>
+            <div class="description-container">
+                <h2 class="description-title">Descripción</h2>
+                <p class="description-text">
+                    <li>Motor 1.600 cc nafta, potencia y eficiencia para el trabajo diario.</li>
+                    <li>Transmisión mecánica, control total y rendimiento confiable.</li>
+                    <li>Doble cabina, espacio y comodidad para vos y tu equipo.</li>
+                    <li>Interior en símil cuero, resistente, fácil de limpiar y con un toque elegante.</li>
+                    <li>Llantas robustas de fábrica, listas para cualquier terreno.</li>
+                    <li>Aire acondicionado y calefacción, confort garantizado todo el año.</li>
+                    <li>Bloqueo central, seguridad en cada viaje.</li>
+                    <li>Dirección asistida, manejo suave y preciso.</li>
+                    <li>Título del representante listo para transferir.</li>
+                    <li>¡Recibimos vehículos de nuestro interés como parte de pago!</li>
+                </p>
+            </div>
+            <a href="https://wa.link/tg9caq" class="cta-button-wsp" style="width: 35%; text-align: center; margin-top: 45px;">COMPRA AHORA
+                <img src="imagenes/wsp.png" alt="WhatsApp" class="wsp-icon">
+            </a>
+        </div>
+    </section>
+
+    <section style="background: url('imagenes/mapa.png') no-repeat center center/cover; z-index: 2; padding-top: 290px; padding-bottom: 290px; opacity: 80%;">
+        <div class="cta-content">
+            <h2 class="cta-title">¿TIENES ALGUNA<span class="highlight"> SUGERENCIA?</span></h2>
+            <p class="cta-subtitle">¡Envianos una reseña!</p>
+            <a href="reseñas.html" class="cta-button">ENVIA TU RESEÑA</a>
+        </div>
+    </section>
+
+        <footer id="footer" class="footer">
+            <div class="footer-content">
+                <div class="copyright">
+                    © 2025 MotorDeal - Tu Auto Importaciones
+                </div>
+                <div class="contact-info">
+                    <a href="https://wa.me/595985721640">WhatsApp</a> |
+                    <a href="#" onclick="copiarTexto(this)">kingopy12@gmail.com</a>
+                </div>
+            </div>
+        </footer>
+<script src="script.js"></script>
+<script src="carousel.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="imagenes/motordeal.png" type="image/png">
+  <title>MotorDeal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+            <img src="imagenes/logo-horizontal.png" alt="Logo">
+        </a> 
+        <input type="checkbox" id="navbar-toggle" class="navbar-toggle">
+        <label for="navbar-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="navbar-menu">
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="reseñas.html">Reseñas</a></li>
+            <li><a href="#footer">Contáctanos</a></li>
+        </ul>
+        </nav>
+
+        <section class="review-section">
+            <div class="container">
+                <h2 class="section-title">DEJA TU <span class="highlight">RESEÑA</span></h2>
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label for="name">Nombre y Apellido <span class="required">*</span></label>
+                        <input type="text" id="name" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="mensaje" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Enviar Reseña</button>
+                </form>
+            </div>
+        </section>
+        
+        <footer id="footer" class="footer">
+            <div class="footer-content">
+                <div class="copyright">
+                    © 2025 MotorDeal
+                </div>
+                <div class="contact-info">
+                    <a href="https://wa.me/595985940178">WhatsApp</a> |
+                    <a href="#" onclick="copiarTexto(this)">kingopy12@gmail.com</a>
+                </div>
+            </div>
+        </footer>
+    <script src="script.js"></script>
+</body>
+</html>

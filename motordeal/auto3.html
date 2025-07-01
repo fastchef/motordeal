@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="imagenes/motordeal.png" type="image/png">
+  <title>MotorDeal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="carousel.css">
+</head>
+<body>
+        <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+            <img src="imagenes/logo-horizontal.png" alt="Logo">
+        </a> 
+        <input type="checkbox" id="navbar-toggle" class="navbar-toggle">
+        <label for="navbar-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="navbar-menu">
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="reseñas.html">Reseñas</a></li>
+            <li><a href="#footer">Contáctanos</a></li>
+        </ul>
+        </nav>
+
+    <section class="car-section">
+        <section class="carousel-section">
+            <div class="carousel-container">
+            <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+
+            <div class="carousel-slides">
+                <img src="imagenes/autos/drive/ato3/pov3-3.png" alt="Auto 1" class="carousel-slide active"/>
+                <img src="imagenes/autos/drive/ato3/pov3-2.png" alt="Auto 2" class="carousel-slide"/>
+                <img src="imagenes/autos/drive/ato3/pov3-1.png" alt="Auto 3" class="carousel-slide"/>
+                <img src="imagenes/autos/drive/ato3/pov3-4.png" alt="Auto 4" class="carousel-slide"/>
+            </div>
+
+            <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
+            </div>
+        </section>
+        
+        <div class="car-details">
+            <h1 class="car-title">Hyundai Tucson 2016</h1>
+            <p class="car-price">165.000.000 ₲</p>
+            <div class="description-container">
+                <h2 class="description-title">Descripción</h2>
+                <p class="description-text">
+                    <li>Motor 2000 cc Automático Diésel 4x2, perfecto para potencia y economía.</li>
+                    <li>Interior en cuero negro, elegante y confortable.</li>
+                    <li>Techo panorámico que realza cada trayecto.</li>
+                    <li>Título a transferir.</li>
+                    <li>Llantas de aleación aro 18”.</li>
+                    <li>Aire acondicionado digital con climatizador para mayor confort.</li>
+                    <li>Bloqueo central para tu seguridad.</li>
+                    <li>Conectividad USB y compatibilidad con Apple CarPlay para una experiencia multimedia completa.</li>
+                    <li>Control en el volante para una conducción práctica.</li>
+                    <li>Asientos con calefacción y enfriador para tu comodidad en cualquier clima.</li>
+                    <li>Asiento eléctrico ajustable para mayor confort.</li>
+                    <li>Cámara de retroceso para estacionar con facilidad.</li>
+                    <li>Faros LED para excelente visibilidad.</li>
+                </p>
+            </div>
+            <a href="https://wa.link/qboae0" class="cta-button-wsp" style="width: 35%; text-align: center; margin-top: 45px;">COMPRA AHORA
+                <img src="imagenes/wsp.png" alt="WhatsApp" class="wsp-icon">
+            </a>
+        </div>
+    </section>
+
+    <section style="background: url('imagenes/mapa.png') no-repeat center center/cover; z-index: 2; padding-top: 290px; padding-bottom: 290px; opacity: 80%;">
+        <div class="cta-content">
+            <h2 class="cta-title">¿TIENES ALGUNA<span class="highlight"> SUGERENCIA?</span></h2>
+            <p class="cta-subtitle">¡Envianos una reseña!</p>
+            <a href="reseñas.html" class="cta-button">ENVIA TU RESEÑA</a>
+        </div>
+    </section>
+
+        <footer id="footer" class="footer">
+            <div class="footer-content">
+                <div class="copyright">
+                    © 2025 MotorDeal - Tu Auto Importaciones
+                </div>
+                <div class="contact-info">
+                    <a href="https://wa.me/595985721640">WhatsApp</a> |
+                    <a href="#" onclick="copiarTexto(this)">kingopy12@gmail.com</a>
+                </div>
+            </div>
+        </footer>
+<script src="script.js"></script>
+<script src="carousel.js"></script>
+</body>
+</html>
